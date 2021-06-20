@@ -291,14 +291,15 @@ def cantidad_compras_turno():
                 continue
         except:
             continue
-        
+
 
 def main():
-    hoy = datetime.now()
-    hora_actual = hoy.time()
+
     medio_dia = time(12,0,0,0)
     opcion = 99
     while(opcion != 6):
+        hoy = datetime.now()
+        hora_actual = hoy.time()
         #print(hora_actual < medio_dia)
         if hora_actual < medio_dia:
             print(" TURNO 1 ".center(60,'-'))
