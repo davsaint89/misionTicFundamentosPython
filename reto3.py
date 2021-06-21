@@ -1,4 +1,4 @@
-#Bienvenidos Tripulantes Grupo 72, adjunte aqui el codigo del Reto 3, para su evaluación 
+#Bienvenidos Tripulantes Grupo 72, adjunte aqui el codigo del Reto 3, para su evaluación
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -31,7 +31,7 @@ def datos_cliente():
         tipo_doc = str(input("> "))
         datos_clientes[j].append(tipo_doc)
         #print("Numero de documento: ")
-        num_doc = int(input("> "))
+        num_doc = str(input("> "))
         datos_clientes[j].append(num_doc)
         #print("Nombre cliente:")
         nombre_cliente = str(input("> "))
@@ -279,22 +279,21 @@ def cantidad_compras_turno():
     choice = 99
     while choice!=3:
         #print("Seleccione (1=Turno 1,  2=Turno 2, 3=Salir)")
-        try:
-            choice = int(input("> "))
-            if choice == 1:
-                print(len(compras))
-            elif choice == 2:
-                print(len(compras2))
-            elif choice == 3:
-                continue
-            else:
-                continue
-        except:
+        #try:
+        choice = int(input("> "))
+        if choice == 1:
+            print(len(compras))
+        elif choice == 2:
+            print(len(compras2))
+        elif choice == 3:
             continue
-        
+        else:
+            continue
+        #except:
+        #    continue
+
 
 def main():
-    
     medio_dia = time(12,0,0,0)
     opcion = 99
     while(opcion != 6):
@@ -303,90 +302,90 @@ def main():
         #print(hora_actual < medio_dia)
         if hora_actual < medio_dia:
             #print(" TURNO 1 ".center(60,'-'))
-            try:
+            #try:
                 #print("Menú de Opciones\n1.Ingreso Datos del cliente\n2.Ingreso Datos para cálculo de la compra e impresión resumen de la compra\n3.Impresion Cantidad de compras por turno\n4.Impresion valor compras por turno\n5.Datos del envío\n6.Salir")
-                opcion=int(input("> "))
+            opcion=int(input("> "))
 
-                if opcion == 1:
-                    datos_cliente()
+            if opcion == 1:
+                datos_cliente()
 
-                elif opcion == 2:
+            elif opcion == 2:
 
-                    #print("Ingrese la forma me envío: 1= Rápido   2=Normal")
-                    forma_envio=int(input("> "))
+                #print("Ingrese la forma me envío: 1= Rápido   2=Normal")
+                forma_envio=int(input("> "))
 
-                    if forma_envio >= 1: # Rápido
-                        #print("Ingrese la forma me envío: 1=Local, 2=Nacional, 3=Internacional")
-                        tipo_envio=int(input("> "))
-                        #print(tipo_envio)
-                        if tipo_envio >= 1 and tipo_envio <=3:
-                            calculo_turno_1(forma_envio, tipo_envio)
+                if forma_envio >= 1: # Rápido
+                    #print("Ingrese la forma me envío: 1=Local, 2=Nacional, 3=Internacional")
+                    tipo_envio=int(input("> "))
+                    #print(tipo_envio)
+                    if tipo_envio >= 1 and tipo_envio <=3:
+                        calculo_turno_1(forma_envio, tipo_envio)
 
-                    elif forma_envio == 2: # normal
-                        #print("Ingrese la forma me envío: 1=Local, 2=Nacional, 3=Internacional")
-                        tipo_envio=int(input("> "))
-                        #print(tipo_envio)
-                        if tipo_envio >= 1 and tipo_envio <=3:
-                            calculo_turno_1(forma_envio, tipo_envio)
+                elif forma_envio == 2: # normal
+                    #print("Ingrese la forma me envío: 1=Local, 2=Nacional, 3=Internacional")
+                    tipo_envio=int(input("> "))
+                    #print(tipo_envio)
+                    if tipo_envio >= 1 and tipo_envio <=3:
+                        calculo_turno_1(forma_envio, tipo_envio)
 
-                elif opcion == 3:
-                    #print("Cantidad compras por turno")
-                    cantidad_compras_turno()
+            elif opcion == 3:
+                #print("Cantidad compras por turno")
+                cantidad_compras_turno()
 
-                elif opcion == 4:
-                    print("Imprimir resumen compras por turno")
+            elif opcion == 4:
+                print("Imprimir resumen compras por turno")
 
-                elif opcion == 5:
-                    print("Pedir datos de envío")
+            elif opcion == 5:
+                print("Pedir datos de envío")
 
-                else:
-                    continue
-                        #print("la opcion ingresada no existe")
-            except:
+            else:
                 continue
+                        #print("la opcion ingresada no existe")
+            #except:
+            #    continue
         else:
             #print(" TURNO 2 ".center(60,'-'))
-            try:
+            #try:
                 #print("Menú de Opciones\n1.Ingreso Datos del cliente\n2.Ingreso Datos para cálculo de la compra e impresión resumen de la compra\n3.Impresion Cantidad de compras por turno\n4.Impresion valor compras por turno\n5.Datos del envío\n6.Salir")
-                opcion=int(input("> "))
+            opcion=int(input("> "))
 
-                if opcion == 1:
-                    datos_cliente()
+            if opcion == 1:
+                datos_cliente()
 
-                elif opcion == 2:
+            elif opcion == 2:
 
-                    #print("Ingrese la forma me envío: 1= Rápido   2=Normal")
-                    forma_envio=int(input("> "))
+                #print("Ingrese la forma me envío: 1= Rápido   2=Normal")
+                forma_envio=int(input("> "))
 
-                    if forma_envio >= 1: # Rápido
-                        #print("Ingrese la forma me envío: 1=Local, 2=Nacional, 3=Internacional")
-                        tipo_envio=int(input("> "))
-                        #print(tipo_envio)
-                        if tipo_envio >= 1 and tipo_envio <=3:
-                            calculo_turno_2(forma_envio, tipo_envio)
+                if forma_envio >= 1: # Rápido
+                    #print("Ingrese la forma me envío: 1=Local, 2=Nacional, 3=Internacional")
+                    tipo_envio=int(input("> "))
+                    #print(tipo_envio)
+                    if tipo_envio >= 1 and tipo_envio <=3:
+                        calculo_turno_2(forma_envio, tipo_envio)
 
-                    elif forma_envio == 2: # normal
-                        #print("Ingrese la forma me envío: 1=Local, 2=Nacional, 3=Internacional")
-                        tipo_envio=int(input("> "))
-                        #print(tipo_envio)
-                        if tipo_envio >= 1 and tipo_envio <=3:
-                            calculo_turno_2(forma_envio, tipo_envio)
+                elif forma_envio == 2: # normal
+                    #print("Ingrese la forma me envío: 1=Local, 2=Nacional, 3=Internacional")
+                    tipo_envio=int(input("> "))
+                    #print(tipo_envio)
+                    if tipo_envio >= 1 and tipo_envio <=3:
+                        calculo_turno_2(forma_envio, tipo_envio)
 
-                elif opcion == 3:
-                    #print("Cantidad compras por turno")
-                    cantidad_compras_turno()
+            elif opcion == 3:
+                #print("Cantidad compras por turno")
+                cantidad_compras_turno()
 
-                elif opcion == 4:
-                    print("Imprimir resumen compras por turno")
+            elif opcion == 4:
+                print("Imprimir resumen compras por turno")
 
-                elif opcion == 5:
-                    print("Pedir datos de envío")
+            elif opcion == 5:
+                print("Pedir datos de envío")
 
-                else:
-                    continue
-                        #print("la opcion ingresada no existe")
-            except:
+            else:
                 continue
+                        #print("la opcion ingresada no existe")
+            #except:
+            #    continue
 
 
 
