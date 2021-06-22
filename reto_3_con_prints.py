@@ -53,6 +53,31 @@ def datos_cliente():
 
     print(len(datos_clientes))
 
+
+
+def calculo_total_compras():
+    choice = 99
+    while choice!=3:
+        print("Seleccione (1=Turno 1,  2=Turno 2, 3=Salir)")
+        #try:
+        choice = int(input("> "))
+        if choice == 1:
+            if len(compras) > 0:
+                total_compras = sum([compra[-1] for compra in compras])
+                print(int(total_compras))
+            else:
+                print(0)
+        elif choice == 2:
+            if len(compras2) > 0:
+                total_compras = sum([compra[-1] for compra in compras2])
+                print(int(total_compras))
+            else:
+                print(0)
+        elif choice == 3:
+            continue
+        else:
+            continue
+
 def calculo_turno_1(forma, tipo):
     global contador
     global compras
@@ -335,6 +360,7 @@ def main():
 
             elif opcion == 4:
                 print("Imprimir resumen compras por turno")
+                calculo_total_compras()
 
             elif opcion == 5:
                 print("Pedir datos de envío")
@@ -378,6 +404,7 @@ def main():
 
             elif opcion == 4:
                 print("Imprimir resumen compras por turno")
+                calculo_total_compras()
 
             elif opcion == 5:
                 print("Pedir datos de envío")
