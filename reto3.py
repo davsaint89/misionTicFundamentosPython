@@ -16,9 +16,12 @@ contador1 = 1
 compras = list()
 compras2 = list()
 datos_clientes = list()
+datos_envio = list()
+
 i = 0
 j = 0
 k = 0
+l = 0
 
 def datos_cliente():
     opt = 99
@@ -53,6 +56,41 @@ def datos_cliente():
         j += 1
 
     print(len(datos_clientes))
+
+def input_datos_envio():
+    opt = 99
+    global l
+    global datos_envio
+    while opt != 2:
+        datos_envio.append([])
+        #print("Tipo de documento destinatario: ")
+        tipo_d = str(input("> "))
+        datos_envio[l].append(tipo_d)
+        #print("Numero de documento: ")
+        num_d = str(input("> "))
+        datos_envio[l].append(num_d)
+        #print("Nombre destinatario: ")
+        nombre_d = str(input("> "))
+        datos_envio[l].append(nombre_d)
+        #print("Direccion destinatario: ")
+        direccion_d = str(input("> "))
+        datos_envio[l].append(direccion_d)
+        #print("Telefono: ")
+        tel_d = str(input("> "))
+        datos_envio[l].append(tel_d)
+        #print("Ciudad destino: ")
+        ciudad_d = str(input("> "))
+        datos_envio[l].append(ciudad_d)
+        #print("País destino: ")
+        pais_d = str(input("> "))
+        datos_envio[l].append(pais_d)
+        #print("Empresa transportadora: ")
+        trans_d = str(input("> "))
+        datos_envio[l].append(trans_d)
+        #print("otro cliente?(1=Si; 2=No)")
+        opt = int(input("> "))
+        l += 1
+    print(len(datos_envio))
 
 def calculo_total_compras():
     choice = 99
@@ -360,7 +398,8 @@ def main():
                 calculo_total_compras()
 
             elif opcion == 5:
-                print("Pedir datos de envío")
+                #print("Pedir datos de envío")
+                input_datos_envio()
 
             else:
                 continue
@@ -404,7 +443,8 @@ def main():
                 calculo_total_compras()
 
             elif opcion == 5:
-                print("Pedir datos de envío")
+                #print("Pedir datos de envío")
+                input_datos_envio()
 
             else:
                 continue
