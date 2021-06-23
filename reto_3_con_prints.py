@@ -50,8 +50,11 @@ def datos_cliente():
         ciudad = str(input("> "))
         datos_clientes[j].append(ciudad)
         print("otro cliente?(1=Si; 2=No)")
-        opt = int(input("> "))
+
+        opt = int(input("> ").strip())
         j += 1
+
+        
     print(len(datos_clientes))
 
 
